@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>
+     respond to HTML events
+    </title>
+    <style>
+      .bluebox{
+        background-color: #3A5795;
+        color: white;
+        height: auto;
+        width:auto;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: auto;
+		width: auto;
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: auto;
+		width: auto;
+	  }
+	  .great{
+		background-color: #5a3479;
+		
+	  }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </head>
+  
+  <body>
+    <div class="bluebox">
+      <p>
+        Facebook is 
+        <span id="great">
+          great
+        </span>
+    </p>
+        <p class="orange">Paragraph2</p>
+      
+      <p>paragraph3</p>
+    </div>
+    <div class="yellowbox">
+      <p>
+        Apple.
+      </p>
+      <ul>
+        <li>BMW </li>
+        <li>Audi</li>
+        <li>Mercedes</li>
+      </ul>
+      <p ><a href="https://www.google.com">This is a link</a></p>
+      <p><a href="https://www.microsoft.com/en-in">This is another link</a></p>
+    
+      
+    </div>
+    <p>a paragraph</p>
+    <div class="greenbox">
+      <p>
+        Microsoft.
+      </p>
+      <ul>
+        <li>BMW </li>
+        <li>Audi</li>
+        <li>Mercedes</li>
+      </ul>
+<table>
+   <tr></tr> 
+   <tr><th>Phone make</th><th>Model</th></tr> 
+   <tr><td>Apple</td><td>Ihone 14</td><td>16Go</td></tr> 
+   <tr><td>Apple</td><td>Ihone 14</td><td>16Go</td></tr> 
+   <tr><td>Apple</td><td>Ihone 14</td><td>16Go</td></tr> 
+   <tr><td>Apple</td><td>Ihone 14</td><td>16Go</td></tr> 
+   <tr><td>Apple</td><td>Ihone 14</td><td>16Go</td></tr> 
+
+   <p>Type your name :<input id="input"><button type="submit" id="submit">Submit</button></p>
+
+
+</table>
+      
+    </div>
+    <script>
+     $(function(){
+
+      $("p").click(function(){
+       // $("p").css("background-color","rgba(206,152,230,0.697)");
+
+// to change color of a particular para
+
+     //  $(this ).css("background-color","rgba(206,152,230,0.697)");
+
+     $("p").mouseover(function(){
+        $(this).css("background-color","rgba(189,132,214,0.697)");
+     });
+
+     $("p").mouseout(function(){
+        $(this).css("background-color","");
+     });
+      });
+
+      $("input").focus(function(){
+        $(this).css("background-color","rgba(27,132,201,0.697)");
+      });
+
+      $("input").blur(function(){
+        $(this).css("background-color","pink");
+      });
+
+      $("input").keyup(function(){
+        $(this).css("background-color","rgba(39,190,162,0.697)");
+      });
+
+      $("#submit").click(function(){
+        $("#input").css("backgroung-color","#ffffff");
+        $("#input").val("");
+      })
+     });
+    </script>
+  </body>
+  
+  
+</html>
