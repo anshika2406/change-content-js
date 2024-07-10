@@ -3,7 +3,8 @@
   <head>
     <meta charset ="utf-8">
     <title>
-  Ajax
+  jQuery UI introduction
+
     </title>
     <style>
       .bluebox{
@@ -19,7 +20,7 @@
 	  }
 	  .greenbox{
 		background-color: #31af37;
-		height: auto;
+		height: 100px;
 		width: auto;
 	  }
 	  .great{
@@ -32,65 +33,59 @@
       }
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/sunny/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+
   </head>
   
   <body>
-    <button>Button</button>
    
 
     
-    <div class="bluebox" id="facebook">
+    <div class="bluebox ui-corner-all" id="facebook">
            <p>
         Facebook is 
-        <span class="great">
+        <span class="great ">
           great
         </span>
     </p>
  </div>
 
-    <div class="yellowbox" id="apple">
+    <div class="yellowbox ui-corner-all"
+    style="margin-top: 20px;" id="apple">
       <p>
         Apple.
       </p>  
     </div>
     
-    <div class="greenbox" id="microsoft">
+    <div class="greenbox ui-corner-all"  style="margin-top: 20px;" id="microsoft">
       <p id="microsoftParagraph">
         Microsoft.
       </p>   
       <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink">Microsoft Link</a></p>
     </div>
 
-    <p>Enter your Name :<input></p>
+    <div class="ui-state-error" style="height: 100px;margin-top:   20px ;">
+        <p>
+            Error message
+        </p>
+    </div>
 
    
 
   </body>
 
   <script>
+$(function(){
 
-$(function()
-{
-    $("#facebook").load("ajax/data.txt");
-    $("#apple").load("ajax/data.txt #paragraph1");
+   $("#facebook").draggable();
 
 
-$("button").click(function()
-{
-  $.ajax({
-    url:"ajax/data.txt"
-, success :function(data) {
-$("#microsoft").html(data);
-}
-}
 
-  );
-});
 
 
 });
-
-
   </script>
   
 </html>
