@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>
+ resizeable
+
+
+    </title>
+    <style>
+      .bluebox{
+        background-color: #3A5795;
+        color: white;
+        height: 100px;
+        width:auto;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: 100px;
+		width: auto;
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: 100px;
+		width: auto;
+	  }
+	  .great{
+		background-color: #5a3479;
+		
+	  }
+      #droppable{
+        background-color: #b513eb;
+        height: 300px;
+        width: auto;
+        margin-top: 20px;
+        color: white;
+      }
+
+      p{
+        margin:0;
+      }
+      #container{
+        width: 300px;
+        height: 300px;
+        border-style: dotted;
+      }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/sunny/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+
+  </head>
+  
+  <body>
+   
+
+    
+    <div class="bluebox ui-corner-all" id="facebook">
+           <p>
+        Facebook is 
+        <span class="great ">
+          great
+        </span>
+    </p>
+ </div>
+
+   <div id="container">
+    <div class="yellowbox ui-corner-all"
+    style="margin-top: 20px;" id="apple">
+     <p>Apple</p>
+    </div>
+   </div>
+    
+    <div class="greenbox ui-corner-all"  style="margin-top: 20px;" id="microsoft">
+      <p id="microsoftParagraph">
+        Microsoft.
+      </p>   
+      <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink">Microsoft Link</a></p>
+    </div>
+
+    
+
+   
+
+  </body>
+
+  <script>
+  $(function(){
+$("#facebook").resizable({
+    maxHeight : 200 ,
+    minHeight :50,
+    minWidth : 100,
+    maxWidth : 300,
+    aspectRatio :4/3,
+    ghost:true
+   // alsoResize :"#microsoft"
+});
+
+
+// sizing within limits of container size
+$("#apple").resizable({
+    containment :"#container",
+    animate : true
+});
+
+
+  });  
+
+  </script>
+  
+</html>
