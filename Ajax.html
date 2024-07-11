@@ -86,7 +86,19 @@ $("#microsoft").html(data);
 
   );
 });
+});
 
+
+$("button").click(function()
+{
+  $.ajax({
+    url:"ajax/data.txt"
+, success :function(data) {
+$("#microsoft").html(data);
+}
+}
+
+  );
 
 });
 
