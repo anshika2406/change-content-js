@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>
+selectable
+
+
+    </title>
+    <style>
+      .bluebox{
+        background-color: #3A5795;
+        color: white;
+        height: 100px;
+        width:auto;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: auto;
+		width: auto;
+        padding: 10px;
+        text-align: center;
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: auto;
+		width: auto;
+	  }
+	  .great{
+		background-color: #5a3479;
+		
+	  }
+
+      li{
+        font-size: 2em;
+        margin-bottom:5px ;
+      }
+     
+      .ui-state-default{
+        background: #740da0;
+      }
+
+      #list.ui-selected{
+        background: #953ebb;
+        color: white;
+      }
+
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/sunny/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+
+  </head>
+  
+  <body>
+   
+
+    
+    <div class="bluebox ui-corner-all" id="facebook">
+           <p>
+        Facebook is 
+        <span class="great ">
+          great
+        </span>
+    </p>
+ </div>
+
+   
+ <div class="yellowbox ui-corner-all" id="apple">
+    <ul id="list" class="ui-selectable">
+        <li class="ui-state-default ">
+            Audi
+          </li>
+    <li class="ui-state-default ">Mercedies</li>
+    <li class="ui-state-default ">BMW</li>
+  </ul>
+    </div>
+   
+    
+    <div class="greenbox ui-corner-all"  style="margin-top: 20px;" id="microsoft">
+      <p id="microsoftParagraph">
+        Microsoft.
+      </p>   
+      <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink">Microsoft Link</a></p>
+    </div>
+
+    
+
+   
+
+  </body>
+
+  <script>
+  $(function(){
+
+$("#list").selectable({
+    stop:function(){
+        $(".ui-selected").each(function(){
+            $('<p></p>').text($(this).text()).appendTo("#microsoft");
+        });
+    }
+});
+
+  });  
+
+  </script>
+  
+</html>
