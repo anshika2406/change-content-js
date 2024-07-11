@@ -3,7 +3,7 @@
   <head>
     <meta charset ="utf-8">
     <title>
- resizeable
+Sortable
 
 
     </title>
@@ -16,34 +16,44 @@
       }
 	  .yellowbox{
 		background-color: rgb(222, 224, 85);
-		height: 100px;
+		height: auto;
 		width: auto;
+        padding: 10px;
+        text-align: center;
+       
 	  }
 	  .greenbox{
 		background-color: #31af37;
-		height: 100px;
+		height: auto;
 		width: auto;
+        text-align: center;
+        padding: 10px;
 	  }
 	  .great{
 		background-color: #5a3479;
 		
 	  }
-      #droppable{
-        background-color: #b513eb;
-        height: 300px;
-        width: auto;
-        margin-top: 20px;
-        color: white;
+
+      li{
+        font-size: 2em;
+        margin-bottom:5px ;
+      }
+     
+      .ui-state-default{
+        background: #740da0;
       }
 
-      p{
-        margin:0;
+      #list.ui-selected{
+        background: #953ebb;
+        color: white;
+        
       }
-      #container{
-        width: 300px;
-        height: 300px;
-        border-style: dotted;
+
+      .connectedlist{
+        border: 1px solid #eee ;
+        min-height: 20px;
       }
+
   </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
@@ -65,18 +75,30 @@
     </p>
  </div>
 
-   <div id="container">
-    <div class="yellowbox ui-corner-all"
-    style="margin-top: 20px;" id="apple">
-     <p>Apple</p>
+   
+ <div class="yellowbox ui-corner-all" id="apple">
+    <ul id="list1" class="connectedlist">
+        <li class="ui-state-default ">
+            Audi
+          </li>
+    <li class="ui-state-default notSortable">Mercedies</li>
+    <li class="ui-state-default ">BMW</li>
+  </ul>
     </div>
-   </div>
+   
     
     <div class="greenbox ui-corner-all"  style="margin-top: 20px;" id="microsoft">
       <p id="microsoftParagraph">
         Microsoft.
       </p>   
       <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink">Microsoft Link</a></p>
+      <ul id="list2" class="connectedlist">
+        <li class="ui-state-default ">
+            Ford
+          </li>
+    <li class="ui-state-default notSortable">Toyota</li>
+    <li class="ui-state-default ">Ferrari</li>
+  </ul>
     </div>
 
     
@@ -87,25 +109,17 @@
 
   <script>
   $(function(){
-$("#facebook").resizable({
-    maxHeight : 200 ,
-    minHeight :50,
-    minWidth : 100,
-    maxWidth : 300,
-    aspectRatio :4/3,
-    ghost:true
 
-    // to resize microsoft along with facebook parallely
-   // alsoResize :"#microsoft"
+$("#list1").sortable({
+    placeholder :"ui-state-highlight",
+   //placeholder :"ui-state-error"
+   cancel :".notSortable"
 });
 
-
-// sizing within limits of container size
-$("#apple").resizable({
-    containment :"#container",
-    animate : true
+$("#list2").sortable();
+$("#list1 ,#list2").sortable({
+ connectWith:".connectedlist"   
 });
-
 
   });  
 
