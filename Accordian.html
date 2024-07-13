@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>
+Accordian
+
+
+    </title>
+    <style>
+      .bluebox{
+        background-color: #3A5795;
+        color: white;
+        height: auto;
+        width:auto;
+        margin-bottom: 20px;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: auto;
+		width: auto;
+        padding: 10px;
+        
+       
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: auto;
+		width: auto;
+       
+        padding: 10px;
+	  }
+	  .great{
+		background-color: #5a3479;
+		
+	  }
+
+      
+
+  </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/sunny/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+  </head>
+  
+  <body>
+   
+<div id="resizer" class="ui-widget-content"><div class="bluebox ui-corner-all" id="facebook">
+  <h3>Section 1</h3>
+  <div> <p>Content 1</p>
+ 
+   <p>Content 1</p>
+   <p>Content 1</p>
+   <p>Content 1</p>
+   <p>Content 1</p>
+ </div>
+  <h3>Section 2</h3>
+  <div> <p>Content 2</p></div>
+
+  <h3>Section 3</h3>
+  <div> <p>Content 3</p></div>
+</div></div>
+    
+    
+
+   
+ <div class="yellowbox ui-corner-all" id="apple">
+    <p>Apple</p>
+    </div>
+   
+    
+    <div class="greenbox ui-corner-all"  style="margin-top: 20px;" id="microsoft">
+      <p id="microsoftParagraph">
+        Microsoft.
+      </p>   
+      <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink">Microsoft Link</a></p>
+
+  </ul>
+    </div>
+
+    
+
+   
+
+  </body>
+
+  <script>
+  $(function(){
+
+   // $("#facebook").accordion();
+
+   $("#facebook").accordion({collapsible : true ,
+    icons : {
+      header :"ui-icon-circle-arrow-e",
+      activeHeader:"ui-icon-circle-arrow-s" },
+      heightStyle:"fill"
+    
+
+   })  ;
+
+  
+   $("#resizer").resizable({
+    resize:function(){
+      $("#facebook").accordion("refresh");
+    }
+   })
+  });  
+
+  </script>
+  
+</html>
