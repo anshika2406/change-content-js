@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>
+Acutocomplete
+
+
+    </title>
+    <style>
+      .bluebox{
+        background-color: #3A5795;
+        color: white;
+        height: auto;
+        width:auto;
+        margin-bottom: 20px;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: auto;
+		width: auto;
+        padding: 10px;
+        
+       
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: auto;
+		width: auto;
+       
+        padding: 10px;
+	  }
+	  .great{
+		background-color: #5a3479;
+		
+	  }
+
+      .ui-autocomplete{
+        max-height: 100px;
+        overflow-y:auto ;
+        max-width: 200px;
+        overflow-x: hidden;
+      }
+#city{
+    width:200px;
+}
+      
+
+  </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/sunny/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+  </head>
+  
+  <body>
+   
+<div class="bluebox ui-corner-all" id="facebook">
+    <p>Facebook</p>
+    <p>Input your city :<input id="city"></p>
+</div>
+    
+    
+
+   
+ <div class="yellowbox ui-corner-all" id="apple">
+    <p>Apple</p>
+    </div>
+   
+    
+    <div class="greenbox ui-corner-all"  style="margin-top: 20px;" id="microsoft">
+      <p id="microsoftParagraph">
+        Microsoft.
+      </p>   
+      <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink">Microsoft Link</a></p>
+
+  </ul>
+    </div>
+
+    
+
+   
+
+  </body>
+
+  <script>
+  $(function(){
+
+   $("#city").autocomplete({
+    source:["Looooooooooooooooooooooooooooondon","Newyork","Paris","Madrid","London","London","London","London","Paris","Paris","Paris","Paris","Paris","Madrid","Madrid","Madrid","Madrid","Newyork","Newyork","Newyork","London","London","London","London","London","London"]
+   });
+  });  
+
+  </script>
+  
+</html>
