@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset ="utf-8">
+    <title>
+Dialog
+
+
+    </title>
+    <style>
+      .bluebox{
+        background-color: #3A5795;
+        color: white;
+        height: 100px;
+        width:auto;
+        margin-bottom: 20px;
+      }
+	  .yellowbox{
+		background-color: rgb(222, 224, 85);
+		height: 100px;
+		width: auto;
+        padding: 10px;
+        
+       
+	  }
+	  .greenbox{
+		background-color: #31af37;
+		height: 100px;
+		width: auto;
+       
+        padding: 10px;
+	  }
+	  .great{
+		background-color: #5a3479;
+		
+	  }
+
+      
+      
+
+  </style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/themes/start/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js"></script>
+  </head>
+  
+  <body>
+   
+<div class="bluebox ui-corner-all" id="facebook">
+   <p>Facebook</p>
+
+   
+</div>
+ 
+ <div class="yellowbox ui-corner-all" id="apple">
+    <p>Apple</p>
+    
+    </div>
+    
+    <div class="greenbox ui-corner-all"  style="margin-top: 20px;" id="microsoft">
+    
+        <p id="microsoftParagraph">
+            Microsoft.
+          </p>   
+    </div>
+<div id="mydialog" title="This is a dialog">
+<p>Welcome to our page</p>
+</div>
+<div id="confirmation" title="Leave the page ?">
+    <p><span class="ui-icon ui-icon-alert" style="float: left"></span>You will loose all the unsaved work . Are you  sure?</p>
+</div>
+<button id="open">Open dialog</button>
+<button id="goToPreviousPage">Go To Previous Page</button>
+    
+
+   
+
+  
+
+  <script>
+  $(function(){
+    $("#mydialog").dialog({
+        autoOpen:false
+    });
+$("#open").click(function(){
+$("#mydialog").dialog("open");
+});
+$("button").button();
+$("#confirmation").dialog({
+    autoOpen:false,
+    modal:true,
+    buttons:{
+        "Go To previous page":function(){
+            window.history.back();
+        },
+        Cancel :function(){
+            $(this).dialog("close");
+        }
+    }
+});
+$("#goToPreviousPage").click(function(){
+$("#confirmation").dialog("open");
+});
+  });
+  
+
+  </script>
+  </body>
+  
+</html>
